@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 19.07
+name: 2025-19.07
 
 on:
   repository_dispatch:
@@ -186,7 +186,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         name: OpenWrt-N1 → ${{ env.DATE }}
-        tag: N1-19.07_${{ env.tag_name }}
+        tag: N1-1907_${{ env.tag_name }}
         artifacts: /workdir/upload/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -208,5 +208,6 @@ jobs:
           repository: ${{ github.repository }}
           keep_minimum_runs: 0
           retain_days: 15
+          
           #retain_days: ${{ github.event.inputs.action_days }}
           
