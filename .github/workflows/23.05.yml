@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 2024-0407
+name: 2025-23.05
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: N1/0218-feeds.conf.default
+  FEEDS_CONF: N1/23.05-feeds.conf.default
   CONFIG_FILE: N1/2024-0407.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -186,20 +186,20 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         name: OpenWrt-N1 → ${{ env.DATE }}
-        tag: N1-0407_${{ env.tag_name }}
+        tag: N1-2025_${{ env.tag_name }}
         artifacts: /workdir/upload/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
               ---  使用说明 ---
-              网关：192.168.123.2
+              网关：192.168.1.1
               用户名：root
               密码：password
               kissyouhunter大佬的其它插件一键安装脚本：
               bash <(curl -s -S -L nb0.cc/kiss)
               
               更新说明：
-              2024-0413:+passwall2+socat,添加三个翻墙插件全部依赖.
+              2025-0207:同步上游的更新。
 
     - name: 清理Actions空间
       uses: Mattraks/delete-workflow-runs@main
