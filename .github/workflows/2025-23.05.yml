@@ -192,14 +192,14 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
               ---  使用说明 ---
-              网关：192.168.1.1
+              网关：192.168.123.2
               用户名：root
               密码：password
               kissyouhunter大佬的其它插件一键安装脚本：
               bash <(curl -s -S -L nb0.cc/kiss)
               
               更新说明：
-              2025-0210:同步上游的更新。
+              2025-0212:同步上游的更新。
 
     - name: 清理Actions空间
       uses: Mattraks/delete-workflow-runs@main
