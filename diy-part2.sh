@@ -10,8 +10,9 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# Modify default IP
+# Modify default IP   第一行19.07的路径   第二行23.05的路径
 sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/luci2/bin/config_generate
 
 # 增加 alist （在 ./scripts/feeds install -a 操作之后更换 golang 版本）
 #rm -rf feeds/packages/lang/golang
