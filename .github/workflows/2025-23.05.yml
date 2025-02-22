@@ -176,7 +176,7 @@ jobs:
         PACKAGE_SOC: s905d
         KERNEL_AUTO_LATEST: true
        # KERNEL_REPO_URL: https://github.com/ham0223/OpenWRT-N1/tree/main/opt
-        KERNEL_VERSION_NAME: 5.4._6.1.
+        KERNEL_VERSION_NAME: 5.4._6.6.
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         
     - name: 整理文件
@@ -195,11 +195,9 @@ jobs:
               网关：192.168.123.2
               用户名：root
               密码：password
-              kissyouhunter大佬的其它插件一键安装脚本：
-              bash <(curl -s -S -L nb0.cc/kiss)
               
               更新说明：
-              2025-0213:同步上游的更新。
+              2025-0222:同步上游的更新。
 
     - name: 清理Actions空间
       uses: Mattraks/delete-workflow-runs@main
