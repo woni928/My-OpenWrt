@@ -34,5 +34,8 @@ sed -i 's#GO_PKG_TARGET_VARS.*# #g' feeds/packages/utils/v2dat/Makefile
 # 修复v2ray-plugin编译失败
 rm -rf feeds/luci/applications/luci-app-mosdns
 #rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns}
+#rm -rf feeds/packages/lang/golang
+#git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
+
