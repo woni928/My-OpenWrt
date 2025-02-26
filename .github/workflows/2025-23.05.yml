@@ -197,7 +197,7 @@ jobs:
               密码：password
               
               更新说明：
-              2025-0222:同步上游的更新。
+              2025-0226:添加lucky插件。
 
     - name: 清理Actions空间
       uses: Mattraks/delete-workflow-runs@main
