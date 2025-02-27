@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 2025-23.05-打包
+name: 2025-23.05-diy
 
 on:
   repository_dispatch:
@@ -24,6 +24,7 @@ env:
   CONFIG_FILE: N1/2024-0407.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
+  FILES: N1/files
   TZ: Asia/Shanghai
 
 jobs:
@@ -198,7 +199,7 @@ jobs:
               密码：password
               
               更新说明：
-              2025-0227:测试内核是不是93+，及有无lucky。
+              2025-0227:测试diy目录是否成功。
 
     - name: 清理Actions空间
       uses: Mattraks/delete-workflow-runs@main
