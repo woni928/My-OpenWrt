@@ -176,7 +176,8 @@ jobs:
         PACKAGE_SOC: s905d
         KERNEL_AUTO_LATEST: true
        # KERNEL_REPO_URL: https://github.com/ham0223/OpenWRT-N1/tree/main/opt
-        KERNEL_VERSION_NAME: 5.4._6.6.
+        KERNEL_REPO_URL: breakingbadboy/OpenWrt
+        KERNEL_VERSION_NAME: 5.4.y_6.6.y
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         
     - name: 整理文件
@@ -197,7 +198,7 @@ jobs:
               密码：password
               
               更新说明：
-              2025-0226:添加lucky插件。
+              2025-0226:添加lucky插件-未成功。
 
     - name: 清理Actions空间
       uses: Mattraks/delete-workflow-runs@main
