@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 2025-23.05
+name: 2025-23.05-打包2
 
 on:
   repository_dispatch:
@@ -167,17 +167,20 @@ jobs:
         echo "列出空间占用前10的目录或文件："
         sudo du -h --max-depth=1 /workdir |sort -nr | head -10
         
-    - name: 打包内核
+    - name: Package armsr as openwrt
+      if: ${{ env.compile_status }} == 'success' && !cancelled()
       uses: unifreq/openwrt_packit@master
       env:
-        WHOAMI: ham
-       # OPENWRT_VER: R23.7.7
-        OPENWRT_ARMVIRT: openwrt-armvirt/*.tar.gz
+        OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.tar.gz
+        KERNEL_REPO_URL: breakingbadboy/OpenWrt
+        KERNEL_VERSION_NAME: 6.1.y_6.6.y
+        #PACKAGE_SOC: diy
         PACKAGE_SOC: s905d
-        KERNEL_AUTO_LATEST: true
-       # KERNEL_REPO_URL: https://github.com/ham0223/OpenWRT-N1/tree/main/opt
-        KERNEL_VERSION_NAME: 5.4._6.6.
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GZIP_IMGS: .xz
+        #SCRIPT_DIY_PATH: N1/mk_s905d_n1.sh
+        WHOAMI: ham
+        SW_FLOWOFFLOAD: 0
+        SFE_FLOW: 0
         
     - name: 整理文件
       run: mv /opt/openwrt_packit/output/* /workdir/upload/
@@ -197,7 +200,7 @@ jobs:
               密码：password
               
               更新说明：
-              2025-0226:添加lucky插件。
+              2025-0227:测试打包2-只替换打包内核流程。
 
     - name: 清理Actions空间
       uses: Mattraks/delete-workflow-runs@main
