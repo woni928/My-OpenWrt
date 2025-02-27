@@ -29,7 +29,7 @@ jobs:
     - name: Free up space
       uses: jlumbroso/free-disk-space@main
       with:
-        tool-cache: false
+        tool-cache: true
         android: true
         dotnet: true
         haskell: true
@@ -102,7 +102,7 @@ jobs:
       env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.tar.gz
         KERNEL_REPO_URL: breakingbadboy/OpenWrt
-        KERNEL_VERSION_NAME: 6.1.y_6.6.y
+        KERNEL_VERSION_NAME: 6.6.y
         #PACKAGE_SOC: diy
         PACKAGE_SOC: s905d
         GZIP_IMGS: .xz
@@ -129,7 +129,7 @@ jobs:
             🔒 密码: password
           
             🍁 更新日志：
-               2025-0226：lede的源码测试93+内核。
+               2025-0227：lede的源码测试93+内核。
 
     - name: Delete old releases
       uses: dev-drprasad/delete-older-releases@master
