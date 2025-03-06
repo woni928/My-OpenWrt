@@ -131,7 +131,7 @@ jobs:
             🔒 密码: password
           
             🍁 更新日志：
-               2025-0305：更换了HAM，再测试下固件没有生成？同时添加了passwall依赖的库。
+               2025-0306：更换了HAM，再测试下固件没有生成？同时添加了passwall依赖的库。
 
     - name: 删除旧的固件
       uses: dev-drprasad/delete-older-releases@master
