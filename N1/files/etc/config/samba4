@@ -1,0 +1,24 @@
+
+config samba
+	option workgroup 'WORKGROUP'
+	option charset 'UTF-8'
+	option description 'Samba on OpenWRT'
+
+config sambashare
+	option name '10G'
+	option read_only 'no'
+	option users 'root'
+	option guest_ok 'no'
+	option create_mask '0666'
+	option dir_mask '0777'
+	option path '/mnt/sda1'
+
+config sambashare
+	option name '920G'
+	option path '/mnt/sda2'
+	option read_only 'no'
+	option users 'root'
+	option guest_ok 'no'
+	option create_mask '0666'
+	option dir_mask '0777'
+
