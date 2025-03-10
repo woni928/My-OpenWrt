@@ -14,7 +14,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-23.05
   CONFIG_FILE: N1/immortalwrt/TL.config
-  DIY_SH: N1/immortalwrt/TL-diy.sh
+  DIY_SH: N1/immortalwrt/23.05-TL-diy.sh
   FILES: N1/files
   TZ: Asia/Shanghai
   GITHUB_TOKEN: ${{ secrets.TOKEN }}
@@ -122,7 +122,7 @@ jobs:
         🔒 密码: password 
         
         更新日志：
-        2025-0310：同步上游的更新，passwall还报依赖的错误？
+        2025-0310：同步上游的更新，尝试修复passwall还报依赖的错误.
         
         " >> release.txt
         echo "tag_status=success" >> $GITHUB_ENV
