@@ -18,7 +18,7 @@ env:
   DIY_SH: N1/Lede/LE-diy.sh
   FILES: N1/files
   TZ: Asia/Shanghai
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
 jobs:
   build:
