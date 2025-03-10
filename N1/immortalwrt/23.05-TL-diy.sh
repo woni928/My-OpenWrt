@@ -22,6 +22,16 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 
+
 # 尝试修复openwrt-23.05中rust编译失败的问题
 rm -rf package/passwall-packages/{shadowsocks-rust,v2ray-geodata}
-merge_package v5 https://github.com/sbwml/openwrt_helloworld package/passwall-packages shadowsocks-rust v2ray-geodata
+
+temp_dir=$(mktemp -d)
+git clone https://github.com/sbwml/openwrt_helloworld "$temp_dir"
+
+cp -r "$temp_dir/shadowsocks-rust" package/passwall-packages/
+cp -r "$temp_dir/v2ray-geodata" package/passwall-packages/
+
+rm -rf "$temp_dir"
+echo "Packages merged successfully."
+
