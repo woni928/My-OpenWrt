@@ -1,4 +1,4 @@
-name: TL-N1
+name: TL-N1-24.10
 
 on:
   workflow_dispatch:
@@ -122,7 +122,7 @@ jobs:
         🔒 密码: password 
         
         更新日志：
-        2025-0309：password减少12个依赖，测试固件能否生成？测试。
+        2025-0310：同步上游的更新，更换流程代码。
         
         " >> release.txt
         echo "tag_status=success" >> $GITHUB_ENV
