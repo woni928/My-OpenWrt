@@ -27,7 +27,7 @@ git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/gola
 rm -rf package/passwall-packages/{shadowsocks-rust,v2ray-geodata}
 
 temp_dir=$(mktemp -d)
-git clone https://github.com/sbwml/openwrt_helloworld "$temp_dir"
+git clone https://github.com/coolsnowwolf/lede "$temp_dir"
 
 cp -r "$temp_dir/shadowsocks-rust" package/passwall-packages/
 cp -r "$temp_dir/v2ray-geodata" package/passwall-packages/
