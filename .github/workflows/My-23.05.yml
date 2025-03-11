@@ -195,12 +195,17 @@ jobs:
               2025-0303:更改主机名，升级6.6内核。
               2025-0311:用回我的流程代码，测试DIY目录是否成功。
 
-    - name: 清理Actions空间
+    - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
       with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          keep_minimum_runs: 0
-          retain_days: 5
-          #retain_days: ${{ github.event.inputs.action_days }}
-          
+        retain_days: 3
+        keep_minimum_runs: 5
+        token: ${{ env.GITHUB_TOKEN }}
+
+    - name: 删除自动发布的旧固件
+      uses: dev-drprasad/delete-older-releases@master
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      with:
+        keep_latest: 7
+        delete_tags : true
+        
