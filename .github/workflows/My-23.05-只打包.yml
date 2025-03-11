@@ -75,7 +75,9 @@ jobs:
         KERNEL_VERSION_NAME: 5.4._6.6.
         
     - name: 整理文件
-      run: mv /opt/openwrt_packit/output/* /workdir/upload/
+      run: |
+        mkdir -p /workdir/upload/
+        mv /opt/openwrt_packit/output/* /workdir/upload/
 
     - name: 发布固件
       uses: ncipollo/release-action@v1
