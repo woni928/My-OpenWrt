@@ -14,6 +14,15 @@
 sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/luci2/bin/config_generate
 
+# 修改主机名
+sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
+sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
+
+# 拉取passwall
+git clone https://github.com/xiaorouji/openwrt-passwall --depth=1 package/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall2 --depth=1 package/passwall2
+git clone https://github.com/xiaorouji/openwrt-passwall-packages
+
 # 增加 alist （在 ./scripts/feeds install -a 操作之后更换 golang 版本）
 #rm -rf feeds/packages/lang/golang
 #svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
