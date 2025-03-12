@@ -1,4 +1,4 @@
-name: My-23.05
+name: My-24.10
 
 on:
   repository_dispatch:
@@ -8,19 +8,19 @@ on:
     #- cron: 0 16 * * 4
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
-  FEEDS_CONF: N1/Lede/LE-feeds.conf.default
-  CONFIG_FILE: N1/Lede/LE-mini.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-24.10
+  # FEEDS_CONF: N1/Lede/LE-feeds.conf.default
+  CONFIG_FILE: N1/immortalwrt/TL.config
+  # DIY_P1_SH: diy-part1.sh
+  DIY_P2_SH: N1/immortalwrt/TL-diy.sh
   FILES: N1/files
   TZ: Asia/Shanghai
   GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
     - name: 创建编译空间挂载点
@@ -68,12 +68,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update -y
-        sudo -E apt-get -qq install -y ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
-        bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib \
-        git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev \
-        libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz \
-        genisoimage msmtp nano ninja-build npm p7zip p7zip-full patch pkgconf python2.7 python3 python3-pip qemu-utils \
-        rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev libfuse-dev
+        sudo -E apt-get -qq install -y $(curl -fsSL https://raw.githubusercontent.com/nantayo/My-Pkg/master/2410)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -178,7 +173,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         name: OpenWrt-N1 → ${{ env.DATE }}
-        tag: N1-23.05_${{ env.tag_name }}
+        tag: N1-24.10_${{ env.tag_name }}
         artifacts: /workdir/upload/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -191,10 +186,7 @@ jobs:
               密码：password
               
               更新说明：
-              2024-0413：+passwall2+socat,并添加三个翻墙插件全部依赖.
-              2025-0303：更改主机名，升级6.6内核。
-              2025-0311：用回我的流程代码，测试DIY目录是否成功-ok
-              2025-0312：取消几个用不到的插件。
+              2025-0312：更换编译流程代码，同步上游的更新。
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
