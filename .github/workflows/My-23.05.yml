@@ -169,7 +169,7 @@ jobs:
         KERNEL_AUTO_LATEST: true
        # KERNEL_REPO_URL: https://github.com/ham0223/OpenWRT-N1/tree/main/opt
         KERNEL_REPO_URL: breakingbadboy/OpenWrt
-        KERNEL_VERSION_NAME: 5.4._6.6.
+        KERNEL_VERSION_NAME: 6.6.y
         
     - name: 整理文件
       run: mv /opt/openwrt_packit/output/* /workdir/upload/
