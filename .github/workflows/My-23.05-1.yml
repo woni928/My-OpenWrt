@@ -1,4 +1,4 @@
-name: My-23.05
+name: My-23.05-1
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
     - name: 创建编译空间挂载点
@@ -66,14 +66,15 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update -y
+        sudo -E apt-get -qq full-upgrade -y
         sudo -E apt-get -qq install -y ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
-        bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib \
-        git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev \
-        libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz \
-        genisoimage msmtp nano ninja-build npm p7zip p7zip-full patch pkgconf python2.7 python3 python3-pip qemu-utils \
-        rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev libfuse-dev
+        bzip2 ccache clang cmake cpio curl device-tree-compiler flex gawk gcc-multilib g++-multilib gettext \
+        genisoimage git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev \
+        libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libpython3-dev \
+        libreadline-dev libssl-dev libtool llvm lrzsz msmtp ninja-build p7zip p7zip-full patch pkgconf \
+        python3 python3-pyelftools python3-setuptools qemu-utils rsync scons squashfs-tools subversion \
+        swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev libfuse-dev
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -194,7 +195,7 @@ jobs:
               2024-0413：+passwall2+socat,并添加三个翻墙插件全部依赖.
               2025-0303：更改主机名，升级6.6内核。
               2025-0311：用回我的流程代码，测试DIY目录是否成功-ok。
-              2025-0313：取消几个用不到的插件，主题是否为Bootstrap。
+              2025-0313：测试---取消几个用不到的插件，主题是否为Bootstrap，更换24.04，更新依赖。
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
