@@ -18,11 +18,11 @@ sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/luci2/bin/config_gener
 sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 
-# 设置为bootstrap默认主题
-sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci/Makefile
-sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci-light/Makefile
-sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci-nginx/Makefile
-sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci-ssl-nginx/Makefile
+# 设置为bootstrap默认主题-测试没有效果
+#sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci/Makefile
+#sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci-light/Makefile
+#sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci-nginx/Makefile
+#sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci-ssl-nginx/Makefile
 
 # 拉取passwall
 git clone https://github.com/xiaorouji/openwrt-passwall --depth=1 package/passwall
