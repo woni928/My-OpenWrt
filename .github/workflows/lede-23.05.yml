@@ -1,4 +1,4 @@
-name: My-23.05-1
+name: lede-23.05
 
 on:
   repository_dispatch:
@@ -164,7 +164,6 @@ jobs:
       uses: unifreq/openwrt_packit@master
       env:
         WHOAMI: ham
-       # OPENWRT_VER: R23.7.7
         OPENWRT_ARMVIRT: openwrt-armvirt/*.tar.gz
         PACKAGE_SOC: s905d
         KERNEL_AUTO_LATEST: true
@@ -185,8 +184,10 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
               ---  使用说明 ---
+              
               源码: ${{ env.REPO_URL }}
               分支: ${{ env.REPO_BRANCH }}
+              
               网关：192.168.123.2
               用户名：root
               密码：password
