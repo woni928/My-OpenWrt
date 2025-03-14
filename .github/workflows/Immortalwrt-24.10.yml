@@ -67,7 +67,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo -E apt-get -qq update -y
-        sudo -E apt-get -qq install -y $(curl -fsSL https://raw.githubusercontent.com/woni928/N1-2025/refs/heads/main/N1/immortalwrt/2410)
+        sudo -E apt-get -qq install -y $(curl -fsSL https://raw.githubusercontent.com/woni928/My-OpenWrt/refs/heads/main/N1/Immortalwrt/2410)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
