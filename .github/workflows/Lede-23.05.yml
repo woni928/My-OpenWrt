@@ -1,4 +1,4 @@
-name: lede-23.05
+name: Lede-23.05
 
 on:
   repository_dispatch:
@@ -12,9 +12,9 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: N1/Lede/LE-feeds.conf.default
   CONFIG_FILE: N1/Lede/LE-mini.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
-  FILES: N1/files
+  DIY_P1_SH: N1/Lede/diy-part1.sh
+  DIY_P2_SH: N1/Lede/diy-part2.sh
+  FILES: N1/Lede/files
   TZ: Asia/Shanghai
   GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
