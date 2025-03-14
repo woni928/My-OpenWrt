@@ -13,4 +13,4 @@
 ## 感谢 ❤️ 以下大佬。
 - 脚本来源： P3TERX 的 GitHub Actions 云编译  https://github.com/P3TERX/Actions-OpenWrt
 - 打包脚本： Flippy 的 OpenWrt 打包脚本  https://github.com/ophub/flippy-openwrt-actions
-同时还有不知道姓名的所有大佬！
+- 同时还有不知道姓名的所有大佬！
