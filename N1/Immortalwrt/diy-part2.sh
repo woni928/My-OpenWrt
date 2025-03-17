@@ -22,3 +22,7 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
+
+# 修正俩处错误的翻译
+sed -i 's/<%:近期日志在前%>/<%:上移%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
+sed -i 's/<%:近期日志在后%>/<%:下移%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
