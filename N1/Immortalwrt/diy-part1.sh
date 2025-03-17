@@ -19,7 +19,3 @@
 
 # 替换内核
 #sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' ./target/linux/x86/Makefile
-
-# 修正错误的翻译
-sed -i 's/<%:近期日志在前%>/<%:上移%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
-sed -i 's/<%:近期日志在后%>/<%:下移%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
