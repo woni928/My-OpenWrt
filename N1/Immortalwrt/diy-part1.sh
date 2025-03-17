@@ -23,8 +23,3 @@
 # 修正错误的翻译
 sed -i 's/<%:近期日志在前%>/<%:上移%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
 sed -i 's/<%:近期日志在后%>/<%:下移%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
-
-# 更新日志
-sed -i '/body:/{i\更新说明：\
-2025-03-17：尝试修复几处错误的翻译，同步上游的更新。
-}' Immortalwrt-24.10.yml
