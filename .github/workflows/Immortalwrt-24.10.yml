@@ -177,17 +177,12 @@ jobs:
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-              ---  使用说明 ---
               
               源码：${{ env.REPO_URL }}
               分支：${{ env.REPO_BRANCH }}
-              
               网关：192.168.123.2
               用户名：root
               密码：password
-              
-              更新说明：
-              2025-0317：尝试修复几处错误的翻译，同步上游的更新。
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
