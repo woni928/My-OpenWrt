@@ -18,8 +18,12 @@ sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/luci2/bin/config_gener
 #sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 
-# 修改opkg.conf文件
-sed -i '/option overlay_root \/overlay/a #option check_signature' /etc/opkg.conf
+# 修正俩处错误的翻译
+sed -i 's/<%:Up%>/<%:Move up%>/g' /usr/lib/lua/luci/view/cbi/tblsection.htm
+sed -i 's/<%:Down%>/<%:Move down%>/g' /usr/lib/lua/luci/view/cbi/tblsection.htm
+
+# 修改opkg.conf文件-测试没有效果
+#sed -i '/option overlay_root \/overlay/a #option check_signature' /etc/opkg.conf
 
 # 设置为bootstrap默认主题-测试没有效果
 #sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci/Makefile
