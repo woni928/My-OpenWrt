@@ -24,5 +24,5 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 
 # 修正俩处错误的翻译
-sed -i 's/<%:Up%>/<%:Move up%>/g' /usr/lib/lua/luci/view/cbi/tblsection.htm
-sed -i 's/<%:Down%>/<%:Move down%>/g' /usr/lib/lua/luci/view/cbi/tblsection.htm
+sed -i 's/<%:Up%>/<%:Move up%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
+sed -i 's/<%:Down%>/<%:Move down%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
