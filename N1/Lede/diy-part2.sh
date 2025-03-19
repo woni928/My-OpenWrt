@@ -19,8 +19,8 @@ sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/luci2/bin/config_gener
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 
 # 修正俩处错误的翻译
-sed -i 's/<%:Up%>/<%:Move up%>/g' /usr/lib/lua/luci/view/cbi/tblsection.htm
-sed -i 's/<%:Down%>/<%:Move down%>/g' /usr/lib/lua/luci/view/cbi/tblsection.htm
+sed -i 's/<%:Up%>/<%:Move up%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
+sed -i 's/<%:Down%>/<%:Move down%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
 
 # 修改opkg.conf文件-测试没有效果
 #sed -i '/option overlay_root \/overlay/a #option check_signature' /etc/opkg.conf
