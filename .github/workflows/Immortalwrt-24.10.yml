@@ -181,6 +181,7 @@ jobs:
               
               源码：${{ env.REPO_URL }}
               分支：${{ env.REPO_BRANCH }}
+              注意：默认旁路由模式
               
               网关：192.168.123.2
               用户名：root
