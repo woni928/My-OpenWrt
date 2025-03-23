@@ -14,7 +14,7 @@ env:
   CONFIG_FILE: N1/Immortalwrt/TL.config
   DIY_P1_SH: N1/Immortalwrt/diy-part1.sh
   DIY_P2_SH: N1/Immortalwrt/diy-part2.sh
-  FILES: N1/Immortalwrt/files
+  #FILES: N1/Immortalwrt/files
   TZ: Asia/Shanghai
   GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
@@ -189,7 +189,7 @@ jobs:
 
               更新说明：
               2025-0318：修复几处错误的翻译，添加nikki插件，同步上游的更新。
-              2025-0320：取消旁路由模式。
+              2025-0323：同步上游的更新。
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
