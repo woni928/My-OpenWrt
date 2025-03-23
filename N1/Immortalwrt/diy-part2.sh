@@ -12,6 +12,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall2 --depth=1 package/passw
 git clone https://github.com/xiaorouji/openwrt-passwall-packages
 git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 git clone https://github.com/sbwml/luci-app-alist package/alist
+git clone https://github.com/kenzok8/openwrt-packages.git && mv ./openwrt-packages/luci-app-adguardhome ./package/feeds/luci/luci-app-adguardhome && rm -rf openwrt-packages
 
 rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
