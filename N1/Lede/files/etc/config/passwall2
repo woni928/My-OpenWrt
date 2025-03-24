@@ -55,7 +55,7 @@ config global_rules
 	option geoip_url 'https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest'
 	option geosite_url 'https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest'
 	option week_update '7'
-	option time_update '1'
+	option time_update '3'
 
 config global_app
 	option xray_file '/usr/bin/xray'
@@ -90,29 +90,13 @@ config nodes 'myshunt'
 	option remarks '分流总节点'
 	option type 'Xray'
 	option protocol '_shunt'
-	option default_node '_direct'
+	option default_node 'xZmyEbPa'
 	option domainStrategy 'IPOnDemand'
 	option domainMatcher 'hybrid'
 	option preproxy_enabled '0'
 	option Reject '_blackhole'
 	option Direct '_direct'
 	option Proxy '_default'
-
-config subscribe_list
-	option remark '1000G'
-	option url 'https://sub.startyun.eu.org/api/v1/client/subscribe?token=77e3ef139c1d033217a296593e9c6de1'
-	option allowInsecure '1'
-	option filter_keyword_mode '5'
-	option ss_type 'global'
-	option trojan_type 'global'
-	option vmess_type 'global'
-	option vless_type 'global'
-	option hysteria2_type 'global'
-	option domain_strategy 'global'
-	option auto_update '1'
-	option week_update '8'
-	option interval_update '6'
-	option user_agent 'v2rayN/9.99'
 
 config shunt_rules 'Reject'
 	option remarks 'Reject'
@@ -125,7 +109,8 @@ config shunt_rules 'Direct'
 	option domain_list 'xn--ngstr-Ira8j.com
 geosite:private
 geosite:cn
-appstorrent.ru'
+appstorrent.ru
+dl.openwrt.ai'
 	option ip_list 'geoip:private
 geoip:cn'
 
@@ -134,21 +119,3 @@ config shunt_rules 'Proxy'
 	option network 'tcp,udp'
 	option domain_list 'geosite:geolocation-!cn
 torrentmac.net'
-
-config nodes 'xZmyEbPa'
-	option ws_host 'node-us-2-2.clashr.us.kg'
-	option type 'Xray'
-	option protocol 'vless'
-	option encryption 'none'
-	option tls_allowInsecure '1'
-	option ws_path '/'
-	option add_from '导入'
-	option tls '0'
-	option port '80'
-	option transport 'ws'
-	option address 'cloudflare-ip.mofashi.ltd'
-	option remarks 'US-10'
-	option uuid '3a8fea4a-35c6-4424-9a76-8a57558bf2b9'
-	option timeout '60'
-	option add_mode '1'
-
