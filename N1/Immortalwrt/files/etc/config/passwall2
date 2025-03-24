@@ -125,6 +125,7 @@ config shunt_rules 'Direct'
 	option domain_list 'xn--ngstr-Ira8j.com
 geosite:private
 geosite:cn
+dl.openwrt.ai
 appstorrent.ru'
 	option ip_list 'geoip:private
 geoip:cn'
