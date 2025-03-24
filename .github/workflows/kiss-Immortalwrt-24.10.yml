@@ -188,7 +188,8 @@ jobs:
               密码：password
 
               更新说明：
-              2025-0324：更换kiss的config文件看能否修复nikki的问题。
+              2025-0323：更换kiss的config文件看能否修复nikki的问题。
+              2025-0324：尝试添加openclash samba4 softethervpn zerotier插件。
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
