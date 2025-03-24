@@ -1,0 +1,122 @@
+
+config global
+	option enabled '0'
+	option node_socks_port '1070'
+	option localhost_proxy '1'
+	option client_proxy '1'
+	option socks_enabled '0'
+	option acl_enable '0'
+	option node 'myshunt'
+	option direct_dns_protocol 'auto'
+	option direct_dns_query_strategy 'UseIP'
+	option remote_dns_protocol 'doh'
+	option remote_dns_query_strategy 'UseIPv4'
+	option dns_hosts 'cloudflare-dns.com 1.1.1.1
+dns.google.com 8.8.8.8'
+	option log_node '1'
+	option loglevel 'error'
+	option write_ipset_direct '1'
+	option remote_dns_doh 'https://1.1.1.1/dns-query'
+	option remote_dns_detour 'remote'
+	option remote_fakedns '1'
+	option dns_redirect '1'
+
+config global_haproxy
+	option balancing_enable '0'
+
+config global_delay
+	option start_daemon '1'
+	option start_delay '30'
+
+config global_forwarding
+	option tcp_no_redir_ports 'disable'
+	option udp_no_redir_ports 'disable'
+	option tcp_redir_ports '80,443'
+	option udp_redir_ports '1:65535'
+	option accept_icmp '0'
+	option use_nft '1'
+	option tcp_proxy_way 'redirect'
+	option ipv6_tproxy '0'
+
+config global_xray
+	option sniffing_override_dest '0'
+	option fragment '0'
+	option noise '0'
+
+config global_other
+	option auto_detection_time 'tcping'
+
+config global_rules
+	option auto_update '1'
+	option geosite_update '1'
+	option geoip_update '1'
+	option v2ray_location_asset '/usr/share/v2ray/'
+	option enable_geoview '1'
+	option geoip_url 'https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest'
+	option geosite_url 'https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest'
+	option week_update '7'
+	option time_update '3'
+
+config global_app
+	option xray_file '/usr/bin/xray'
+	option hysteria_file '/usr/bin/hysteria'
+	option singbox_file '/usr/bin/sing-box'
+
+config global_subscribe
+	option filter_keyword_mode '2'
+	list filter_discard_list '距离下次重置剩余'
+	list filter_discard_list '套餐到期'
+	list filter_discard_list '过期时间'
+	list filter_discard_list '剩余流量'
+	list filter_discard_list 'QQ群'
+	list filter_discard_list '官网'
+	list filter_keep_list '香港'
+	list filter_keep_list '日本'
+	list filter_keep_list '美国'
+	option ss_type 'shadowsocks-libev'
+	option trojan_type 'sing-box'
+	option vmess_type 'xray'
+	option vless_type 'xray'
+	option hysteria2_type 'hysteria2'
+
+config global_singbox
+	option sniff_override_destination '0'
+	option geoip_path '/usr/share/singbox/geoip.db'
+	option geoip_url 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.db'
+	option geosite_path '/usr/share/singbox/geosite.db'
+	option geosite_url 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.db'
+
+config nodes 'myshunt'
+	option remarks '分流总节点'
+	option type 'Xray'
+	option protocol '_shunt'
+	option default_node 'xZmyEbPa'
+	option domainStrategy 'IPOnDemand'
+	option domainMatcher 'hybrid'
+	option preproxy_enabled '0'
+	option Reject '_blackhole'
+	option Direct '_direct'
+	option Proxy '_default'
+
+config shunt_rules 'Reject'
+	option remarks 'Reject'
+	option network 'tcp,udp'
+	option domain_list 'geosite:category-ads-all'
+
+config shunt_rules 'Direct'
+	option remarks 'Direct'
+	option network 'tcp,udp'
+	option domain_list 'xn--ngstr-Ira8j.com
+geosite:private
+geosite:cn
+appstorrent.ru
+dl.openwrt.ai'
+	option ip_list 'geoip:private
+geoip:cn'
+
+config shunt_rules 'Proxy'
+	option remarks 'Proxy'
+	option network 'tcp,udp'
+	option domain_list 'geosite:geolocation-!cn
+torrentmac.net'
+
