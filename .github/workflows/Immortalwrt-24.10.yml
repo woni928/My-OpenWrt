@@ -191,7 +191,7 @@ jobs:
               2025-0318：修复几处错误的翻译，添加nikki插件，同步上游的更新。
               2025-0323：同步上游的更新。添加adguardhome插件。尝试修复nikki无法代理的问题。
               2025-0325：更新passwall2配置文件。
-              2025-0406：同步上游的更新。
+              2025-0407：同步上游的更新。
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
